@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(87, 19, 103);
+    font-family: Arial, sans-serif;
+}
+
+main,
+header,
+footer {
+    background-color: rgb(182, 198, 226);
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 80vw;
+    padding: 1rem;
+}
+
+h1 {
+    color: rgb(224, 62, 65);
+    font-family: 'Kanit', sans-serif;
+    border-bottom: 1px solid rgb(60, 147, 185);
+}
+
+h2,
+h3 {
+    color: rgb(87, 19, 103);
+    font-family: 'Kanit', sans-serif;
+    margin-left: 15px;
+}
+
+hr {
+    border: 2px dashed rgb(60, 147, 185);
+}
+
+p,
+ul {
+    margin-left: 50px;
+}
+img{
+    margin: 15px;
+}
+img.right {
+    float: right;
+    margin: 15px;
+}
+
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+blockquote {
+    color: rgb(87, 19, 103);
+    background-color: rgb(243, 243, 243);
+    padding: 1rem;
+}
+
+a {
+    color: rgb(224, 62, 65);
+    margin-left: 15px;
+}
