@@ -1,0 +1,236 @@
+/* {
+    border: 1px solid black;
+}*/
+html {
+    background-color: #17233e;
+}
+
+body {
+    margin-top: 0;
+}
+
+#spread {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    background-color: #f1f3f2;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-family: 'Abril Fatface', serif;
+    color: #31b8f8;
+    font-weight: lighter;
+    font-size: 75px;
+    max-width: 75%;
+    margin: 0 2rem 2rem 2rem;
+    padding-top: 2rem;
+}
+
+p {
+    text-align: justify;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#intro p {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    max-width: 85%;
+    margin: 2rem;
+    margin-bottom: 4rem;
+    font-size: 35px;
+}
+
+#intro div {
+    border-top: 4px solid #f8cd0f;
+    border-bottom: 4px solid #f8cd0f;
+    padding: 8px;
+    margin: 2rem;
+    max-width: 65%;
+}
+
+#village img {
+    margin: 0 2rem;
+}
+
+#desc1 {
+    max-width: 85%;
+    margin: 0 2rem;
+}
+
+#desc1 h2 {
+    color:#31b8f8;
+    font-size: 35px;
+    text-align: center;
+}
+
+.bigletter {
+    color:#31b8f8;
+    font-size: 18px;
+}
+
+#desc1 p {
+    columns: 2;
+    max-width: 80%;
+    font-size: 15px;
+}
+
+#mountain {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+
+#mountain img {
+    margin: 1rem;
+}
+
+#mountain h2 {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    margin: 1rem 20px 1rem 2rem;
+    font-size: 20px;
+    text-transform:uppercase;
+}
+
+.yellow {
+    color:#f8cd0f;
+}
+
+.blue {
+    color:#31b8f8;
+}
+
+#floatbox {
+    width: 100%;
+    height: 260%;
+    display: grid;
+    grid-template-columns: repeat(10, 90px);
+    grid-template-rows: repeat(30, 90px);
+    max-width: 900px;
+    top: 0%;
+    position: absolute;
+}
+
+#bottomtext {
+    height: 45vh;
+}
+
+#small{
+    grid-column: 3;
+    grid-row: 5/span 2;
+    transform: translateY(15px);
+}
+#small h2{
+    background-color: #f8cd0f;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 45px;
+    max-width: 90px;
+    height: 100%;
+    padding: 5px;
+}
+.white {
+    color: white;
+}
+
+#long{
+    grid-column: 3/span 7;
+    grid-row: 13;
+    transform: translateX(160px) rotate(-90deg);
+}
+#long p{
+    font-family: 'Dancing Script', cursive;
+    font-size: 75px;
+    text-align: center;
+    color: white;
+    padding: 10px 10px;
+    background-color: #31b8f8;
+}
+
+
+#square {
+    grid-column: 1;
+    grid-row: 17;
+}
+#square {
+    background-color: #f1f3f2;
+    width: 320px;
+    height: 250px;
+    transform: translateY(-30px);
+}
+.travel {
+    font-family: 'Dancing Script', cursive;
+    font-size: 85px;
+    text-align: center;
+    margin-bottom: -20px;
+    color: #f8cd0f;
+}
+.agent {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    text-align: right;
+    color:#31b8f8;
+    font-size: 50px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin: -10px 2rem -10px 9rem;
+    letter-spacing: 2px;
+}
+.sub {
+    font-size: 40px;
+    margin: 1rem;
+    margin-left: 2rem;
+    letter-spacing: 6px;
+}
+.begin {
+    font-size: 40px;
+    margin-left: 2rem;
+    margin-top: -1rem;
+    letter-spacing: 6px;
+    font-weight: bolder;
+}
+
+#rightblurb {
+    grid-column: 7;
+    grid-row: 22;
+    transform: translateY(-50px);
+}
+#rightblurb p {
+    width: 180%;
+    font-size: 15px;
+}
+
+#floatimage {
+    grid-column: 4;
+    grid-row: 21;
+    transform: translateX(-55px) translateY(-25px);
+}
+#floatimage img {
+    border:12px solid #f1f3f2;
+}
+
+#leftblurb {
+    grid-column: 1;
+    grid-row: 22;
+    transform: translateX(2rem) translateY(-40px);
+}
+#leftblurb p {
+    width: 200%;
+    font-size: 15px;
+}
+
+#quote {
+    grid-column: 9;
+    grid-row: 22;
+    transform: translateX(20px);
+}
+#quote p {
+    font-family: 'Dancing Script', cursive;
+    color:#31b8f8;
+    font-weight: bold;
+    font-size: 25px;
+    width: 120px;
+    text-align: center;
+}
+
+footer {
+    margin: 2rem;
+}

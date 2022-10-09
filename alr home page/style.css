@@ -44,17 +44,17 @@ img.portrait {
 
 a,
 a:link {
-    color: #414361
+    color: #414361;
 }
 
 a:visited {
-    color: #7F2CCB
+    color: #7F2CCB;
 }
 
 a:hover {
-    color: #01A7C2
+    color: #01A7C2;
 }
 
 a:active {
-    color: #414361
+    color: #414361;
 }
