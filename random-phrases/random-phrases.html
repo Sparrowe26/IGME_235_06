@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="box">
+        <h1>What Would Wheatley Do?</h1>
+        <p>Placeholder Text</p>
+
+        <button>Random Quote!</button>
+        <footer>&#169; 2022 Amanda Rowe</footer>
+    </section>
+
+    <script>
+        // array of 5 quotes
+        let quotes = [
+            "It's not out of the question that you might have a very minor case of serious brain damage. But don't be alarmed, alright?",
+            "Hello! This is the part where I kill you.",
+            "Oh, for God's - they told me that if I ever turned this flashlight on, I would <i>die!</i> They told me that about everything!",
+            "HA! I knew someone was alive in here. AH! Oh. My. God. You look ter - ummm... good. Looking good, actually.",
+            "I'll bet that's not even fire coming out of the walls, is it? It's just clevery placed lights and papier mache!"
+            ]
+        let button = document.querySelector("button");
+        let quote = document.querySelector("p");
+
+        // random inclusive # function
+        function getRandom(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+        // randomly generates a quote
+        function displayQuote(){
+            let randIndex = getRandom(0, quotes.length - 1);
+
+            quote.innerHTML = quotes[randIndex];
+        }
+        
+        //call on load
+        displayQuote();
+
+        //call on button click
+        button.onclick = displayQuote;
+
+    </script>
+</body>
+
+</html>
