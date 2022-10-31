@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web Apps-6-HW</title>
+	<style>
+		body{border:1px solid gray;}
+	</style>
+</head>
+<body>
+<h1>My Favorites</h1>
+<h2>My Favorite Colors</h2>
+
+<ol id="colorsList">
+	
+</ol>
+
+<h2>My Favorite Bands</h2>
+
+<ol id="bandsList">
+	
+</ol>
+
+<h2>My Favorite Links</h2>
+
+<ol id="linksList">
+	
+</ol>
+
+<script>
+"use strict";
+let colors = ["lavender","teal","baby blue","purple","pink"];
+let bands = ["Good Kid", "The Happy Fits", "Jukebox the Ghost", "Half Alive", "Autoheart"]; // add some bands
+
+// Optional - can you figure out how to pull both the key AND the value
+// from the `links` object literal?
+let links = {
+		"Crouton": "https://crouton.net/",
+		"Pointer Pointer" : "https://pointerpointer.com/",
+		"Chris McKenzie" : "https://chrismckenzie.com/"
+	}
+
+//create references to object lists
+let colorsList = document.querySelector("#colorsList");
+let bandsList = document.querySelector("#bandsList");
+let linksList = document.querySelector("#linksList");
+
+//add colors list items to colorsList
+for(let i = 0; i < colors.length; i++){
+	let colorItem = document.createElement("li");
+	colorItem.innerHTML = colors[i];
+
+	colorsList.appendChild(colorItem);
+}
+
+//add items to bandsList
+for (let band of bands){
+	let bandItem = document.createElement("li");
+	bandItem.innerHTML = band;
+
+	bandsList.appendChild(bandItem);
+}
+
+//add items to linksList
+for (let link in links){
+	let linkItem = document.createElement("li");
+	linkItem.innerHTML = "<a href='" + links[link] + "'>" + link + "</a>"
+
+	linksList.appendChild(linkItem);
+}
+
+</script>
+</body>
+</html>
