@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://pixijs.download/release/pixi.js"></script>
+    <script src="demo.js"></script>
+</head>
+
+<body>
+    <h1>Hello PixiJS</h1>
+    <script>
+        let app = new PIXI.Application({ width: 640, height: 360, backgroundColor: "#8d4a91" });
+        document.body.appendChild(app.view);
+
+        let triangle = new Triangle(
+            [
+                [0, 0],
+                [250, 0],
+                [250, 250]
+            ],
+            0xff00ff
+        )
+
+        triangle.x = 200;
+        triangle.y = 100;
+
+
+        app.stage.addChild(triangle);
+    </script>
+</body>
+
+</html>

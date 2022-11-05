@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><a href="https://emojihub.herokuapp.com/api/all">EmojiHub API</a></h1>
+    <section id="container"></section>
+
+    <script>
+        const container = document.querySelector("#container");
+
+        function getData(url){
+            let xhr = new XMLHttpRequest();
+
+            xhr.onload = dataLoaded;
+
+            xhr.onerror = dataError;
+
+            xhr.open("GET", url);
+            xhr.send();
+        }
+
+        function dataLoaded(e){
+            let xhr = e.target;
+
+            console.log(xhr.responseText);
+
+            let obj = JSON.parse(xhr.responseText);
+            let results = Object.values(obj);
+
+            let string = "";
+
+            for (let i = 0; i < results.length; i++){
+                let result = results[i];
+
+                let line = `<div class='result'><p>${result.htmlCode[0]}</p></div>`;
+                string += line;
+            }
+
+            document.querySelector("#container").innerHTML = string;
+        }
+
+        function dataError(e){
+            console.log("An error occured");
+        }
+
+        getData("https://emojihub.herokuapp.com/api/all");
+
+    </script>
+</body>
+</html>

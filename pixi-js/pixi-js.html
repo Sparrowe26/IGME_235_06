@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://pixijs.download/release/pixi.js"></script>
+</head>
+
+<body>
+    <h1>Hello PixiJS</h1>
+    <script>
+        let app = new PIXI.Application({ width: 640, height: 360, backgroundColor: "#8d4a91" });
+        document.body.appendChild(app.view);
+
+        // Magically load the PNG asynchronously
+        let sprite = PIXI.Sprite.from('images/worm.png');
+        sprite.anchor.set(0.5, 0.5);
+
+        sprite.width = 100;
+        sprite.height = 100;
+        sprite.x = app.view.width / 2;
+        sprite.y = app.view.height / 2;
+
+        sprite.interactive = true;
+        sprite.buttonMode = true;
+
+        app.stage.addChild(sprite);
+
+        sprite.on('click', function (e) {
+
+            sprite.x = e.data.global.x;
+            sprite.y = e.data.global.y;
+            sprite.dragging = !sprite.dragging;
+        });
+
+        sprite.on('mousemove', function (e) {
+
+            if (sprite.dragging) {
+                sprite.x = e.data.global.x;
+                sprite.y = e.data.global.y;
+            }
+        });
+
+        app.ticker.add((deltaTime) => {
+
+            sprite.rotation += Math.PI/4;
+        })
+    </script>
+</body>
+
+</html>
