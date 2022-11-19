@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Central Documentation</title>
+    <style>
+        body {
+            max-width: 60vw;
+        }
+
+        img {
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Emoji Central Documentation</h1>
+
+    <h2>Progress Overview</h2>
+    <p>Starting out, I wanted to make an application that utilized the <a href="https://emojihub.herokuapp.com/">Emoji
+            Hub API</a>
+        and allowed the user to search and sort emojis based on category and groups within those
+        categories. Initially, I also wanted a random function that displayed a desired number of random emojis,
+        but due to how the API handled random emojis through a separate link that generated one at a time,
+        I ended up changing that function to also using the sorting functions from earlier. With the current way the
+        random generation
+        works, it only generates one at a time per button click, but you can limit the randomness by restricting it to
+        certain categories or groups. Also, I initially had the following image as my proposed layout:
+    </p>
+
+    <img src="../images/emoji_layout.jpg">
+
+    <p>However, while creating the website, I ended up changing it slightly to have my controls up top with
+        the generated emojis below.
+        <br>
+        Figuring out how to filter by category went pretty smoothly, but since only the first three categories
+        had groups within them, I wanted to make the group selector only show up when those few categories were
+        selected.
+        <br>
+        Also different from the proposed image was how I planned to implement favorites. I wanted the favorites
+        list to be updated when emojis were clicked, and that stayed constant until the end of the project,
+        but instead of having a "show favorites" option in the controls, I opted to create an input field and
+        add clicked emojis to that instead. Because I used an input field in the final project, I made it so you
+        could easily remove favorites by deleting them from the field, as well as added a copy to clipboard button
+        which allows the user to copy their selected emojis with the push of a button. Figuring that whole situation
+        out took me a ton of time, trial, and error to figure out, but I'm very satisfied with how it ended up.
+    </p>
+
+    <h2>Sources</h2>
+    <ul>
+        <li><a href="https://emojihub.herokuapp.com/">Emoji
+            Hub API</a></li>
+        <li><a href="https://fonts.google.com/specimen/Lilita+One">Lilita One Font</a></li>
+        <li><a
+            href="https://www.freepik.com/free-vector/whatsapp-emoji_904078.htm#query=emoji%20background&position=0&from_view=keyword">Background
+            image by ibrandify</a> on Freepik</li>
+    </ul>
+
+    <h2>Special Features</h2>
+    <ul>
+        <li>Back to Top button fixed in the bottom right corner</li>
+        <li>Favorites list copies to clipboard with a button click</li>
+        <li>Hovering over emojis tells the user their names</li>
+        <li>Group selector disappears if not needed under specific categories</li>
+        <li>One by one sortable random emoji generation</li>
+    </ul>
+
+    <h2>Requirements Met</h2>
+
+    <h3>Functional</h3>
+    <ul>
+        <li>Used EmojiHub API</li>
+        <li>Favorites bar saved in local storage</li>
+        <li>Minimum of 3 controls met: 2 category selectors, 2 group selectors, clear button, random search button</li>
+        <li>Additional controls: copy to clipboard button, clicking on emojis adds them to favorites</li>
+        <li>No JavaScript errors</li>
+    </ul>
+
+    <h3>Design & Interaction</h3>
+    <p>Color Palette used:</p>
+    <img src="../images/emojiPalette.png">
+    <ul>
+        <li>Custom interface coded in HTML/CSS by me</li>
+        <li>Widgets and buttons well labeled</li>
+        <li>No error-causing user interactions</li>
+        <li>Search indication text implemented</li>
+        <li>Desktop responsive and uses CSS Flexbox</li>
+        <li>Pleasing design that follows the fun emoji theme! :D</li>
+    </ul>
+
+    <h3>HTML/CSS & Media</h3>
+    <ul>
+        <li>CSS in external style sheet</li>
+        <li>Code Validated</li>
+        <li>Sematically practical</li>
+    </ul>
+
+    <h3>Code Conventions</h3>
+    <ul>
+        <li>JS in external file</li>
+        <li>Code well commented & D.R.Y observed</li>
+        <li>Followed all taught js coding conventions</li>
+    </ul>
+</body>
+
+</html>

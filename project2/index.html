@@ -1,64 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .result {
-            font-size: 10vw;
-        }
-        #container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-    </style>
+    <link rel="stylesheet" href="files/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <title>Emoji Central</title>
 </head>
+
 <body>
-    <h1><a href="https://emojihub.herokuapp.com/api/all">EmojiHub API</a></h1>
-    <section id="container"></section>
+    <h1 id="top">😋Emoji Central😎</h1>
 
-    <script>
-        const container = document.querySelector("#container");
+    <section id="controls">
+        <div id="generalSelect">
+            <h2>Classic<br>Emoji Generator</h2>
+            <p>Sort by group and category!</p>
+            <div class="widgets">
+                Category
+                <select id="category">
+                    <option value="all" selected>All Emojis</option>
+                    <option value="smileys_and_people">Smileys and People</option>
+                    <option value="animals_and_nature">Animals and Nature</option>
+                    <option value="food_and_drink">Food and Drink</option>
+                    <option value="travel_and_places">Travel and Places</option>
+                    <option value="activities">Activities</option>
+                    <option value="objects">Objects</option>
+                    <option value="symbols">Symbols</option>
+                    <option value="flags">Flags</option>
+                </select>
+            </div>
 
-        function getData(url){
-            let xhr = new XMLHttpRequest();
+            <div class="widgets" id="groupSelect">
+                Group
+                <select id="group">
+                    <option value="none" selected>Select</option>
+                </select>
+            </div>
 
-            xhr.onload = dataLoaded;
+            <div class="widgets">
+                <button type="button" id="search">Generate Emojis!</button>
+            </div>
+        </div>
 
-            xhr.onerror = dataError;
+        <div id="randomSelect">
+            <h2>Random<br>Emoji Generator</h2>
+            <p>Generate one random emoji at a time!</p>
+            <div class="widgets">
+                Category
+                <select id="randCategory">
+                    <option value="all" selected>All Emojis</option>
+                    <option value="smileys_and_people">Smileys and People</option>
+                    <option value="animals_and_nature">Animals and Nature</option>
+                    <option value="food_and_drink">Food and Drink</option>
+                    <option value="travel_and_places">Travel and Places</option>
+                    <option value="activities">Activities</option>
+                    <option value="objects">Objects</option>
+                    <option value="symbols">Symbols</option>
+                    <option value="flags">Flags</option>
+                </select>
+            </div>
 
-            xhr.open("GET", url);
-            xhr.send();
-        }
+            <div class="widgets" id="randGroupSelect">
+                Group
+                <select id="randGroup">
+                    <option value="none" selected>Select</option>
+                </select>
+            </div>
 
-        function dataLoaded(e){
-            let xhr = e.target;
+            <div class="widgets">
+                <button type="button" id="randomGen">Surprise me!</button>
+                <button type="button" id="clear">Start Over</button>
+            </div>
+        </div>
+    </section>
 
-            console.log(xhr.responseText);
+    <section id="favorites">
+        <h2>Favorites</h2>
+        <input type="text" id="savedFaves">
+        <button id="copy" title="Copy to Clipboard">📋</button>
+    </section>
 
-            let obj = JSON.parse(xhr.responseText);
-            let results = Object.values(obj);
+    <section id="blueBox">
+        <p>Click to favorite!</p>
+        <h2 id="searching">🤔Searching for emojis...👀</h2>
+        <div id="container"></div>
+    </section>
 
-            let string = "";
+    <footer>
+        <p>
+            &#169; Amanda Rowe 2022 - Click <a href="files/doc.html">Here</a> For Documentation
+            <br>
+            <a
+                href="https://www.freepik.com/free-vector/whatsapp-emoji_904078.htm#query=emoji%20background&position=0&from_view=keyword">Background
+                image by ibrandify</a> on Freepik
+        </p>
+    </footer>
 
-            for (let i = 0; i < results.length; i++){
-                let result = results[i];
+    <div id="topButtonBox">
+        <a href="#top" id="topButton">Back To Top</a>
+    </div>
 
-                let line = `<div class='result'>${result.htmlCode[0]}</div>`;
-                string += line;
-            }
-
-            document.querySelector("#container").innerHTML = string;
-        }
-
-        function dataError(e){
-            console.log("An error occured");
-        }
-        
-        getData("https://emojihub.herokuapp.com/api/all");
-
-    </script>
+    <script src="files/main.js"></script>
 </body>
+
 </html>
